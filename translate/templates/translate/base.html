@@ -1,0 +1,227 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href='{%static "images/logo.jpg" %}'>
+  
+    <link rel="stylesheet" href='{%static "bootstrap/css/bootstrap.min.css" %}?{% now "U" %}' type="text/css">
+    <link rel="stylesheet" href='{%static "fonts/css/fontawesome-all.css" %}?{% now "U" %}' type="text/css">
+    <script src='{%static "speech.js" %}?{% now "U" %}'></script>
+   <style>
+@media (min-width: 700px) {
+
+.navlistdemo {display: none;}
+}
+
+
+
+
+
+    body {
+  background-color:  hsla(137, 13%, 45%, 1);
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgba(243, 240, 240, 0.05), 0 2px 10px 0 rgba(248, 247, 247, 0.05);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(247, 245, 245, 0.16), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+   </style>
+
+
+    <script src='{%static "bootstrap/js/bootstrap.min.js" %}?{% now "U" %}'></script>
+    <style>
+        .box-2 {
+    width: 400px;
+    height: 300px;
+    
+    
+}
+
+
+
+.inner-box-2 {
+    width: 380px;
+    height: 231px;
+    background-image: rgba(196, 160, 160, 0.88);
+    border-radius: 8px;
+    margin: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px 23px rgba(142, 170, 168, 0.3);
+}
+    </style>
+    <title>Translation website</title>
+</head>
+
+<body id="body">
+
+  <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header">
+        <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">TRANSILATE</h6>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+            <li class="nav-item">
+              
+                <a href="\" class="nav-link text-truncate">
+                  <i class="fa fa-language"></i> <P class="navlistdemo">TEXT</P>
+                    <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">TEXT TRANSILATE</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url 'speech' %}" class="nav-link text-truncate">
+              <i class="fa fa-microphone "></i> <p class="navlistdemo">VOICE</p>
+                  <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline"> VOICE TRANSILATE </span>
+              </a>
+          </li>
+
+
+
+          
+           
+           
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col min-vh-100 py-3">
+            <!-- toggler -->
+            <button class="btn float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
+              <i class="fa fa-align-justify" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></i>
+
+            </button>
+          
+
+
+
+
+
+           
+   <div class="container">
+
+    <div class=" text-center ">
+      <h1>Talk With Me</h1>
+     </div>
+
+     
+     <div class="box">
+       <div class="row">
+
+
+
+        
+        <div class="col-12 col-sm-6">
+
+
+            
+                <div class="box-1">
+        
+                    {% block content %}
+                    {% endblock %}
+        
+                </div>
+        
+
+
+        </div>
+
+        <div class="col-12 col-sm-6">
+            <div class="box-2">
+
+
+                {% block content2 %}
+                {% endblock %}
+            </div>
+    
+        </div>
+     </div><!-- end div box-->
+
+
+
+
+    </div>
+        
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+    <!-------------------------------->
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <!-------------------------------->
+
+
+
+   <footer class="bd-footer  mt-5 bg-dark text-white">
+    <div class="container py-2">
+      <div class="row">
+        <div class="col-lg-12 mb-3">
+        
+
+            <p class="text-center">Copyright©2024</p>
+          
+        </div>
+        
+       
+        
+       
+      </div>
+    </div>
+  </footer>
+    
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+
+{% extends 'translate/base.html' %}
+
+{% block content %}
+<div class="inner-box-1">
+
+<form  method="post" id="form1" >
+    {% csrf_token %}
+
+    <textarea form="form1" rows="15" cols="50"
+           required  name="work"  >{{ otext }}</textarea>
+
+</form>
+
+</div>
+
+
+
+<div class="btn">
+
+    <button form="form1" type="submit" class="btn btn-primary bg-primary mt-1">Translate</button>
+</div>
+
+{%  endblock %}
+
+{% block content2 %}
+
+
+<select class="form-select mt-2 text-black" aria-label="Default select example" id="lang" form="form1" required>
+    <!-- <option value="hi">Hindi</option>  -->
+    <option value="en">English</option>
+    <option value="it">Italian</option>
+    <option value="fr">French</option>
+ <!-- <option value="ja">Japanese</option> -->
+    <option value="de">German</option>
+    <option value="sw">Swahili</option>
+  </select>
+    
+    
+    <textarea form="form1" rows="13" cols="50" id="demo" readonly>{{ text }}</textarea>
+    <button onclick="speak()"  class="btn btn-primary bg-primary mt-1">Speech</button>
+{% endblock %}
+
+<!-- hecar76193@goulink.com -->

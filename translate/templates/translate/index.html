@@ -1,0 +1,63 @@
+
+{% extends 'translate/base.html' %}
+
+
+
+<div class="row">
+    
+{% block content %}
+
+
+
+    <div class="col-12">
+        
+            <form action="translated" method="post" id="form1" >
+                {% csrf_token %}
+                <textarea form="form1" rows="15" cols="50" class="col-12 mt-4" placeholder="Enter your text here..."
+                       required name="work"></textarea>
+            </form>
+            <button form="form1" type="submit" class="btn btn-primary bg-primary mt-2">Translate <i class="fa fa-language"></i></button>
+
+      
+</div>
+
+{%  endblock %}
+
+
+{% block content2 %}
+
+    <div class="col-12 mt-4">
+        
+        <h4>PICK LANGUAGE</h4>
+            
+<select class="form-select mt-4 text-black" aria-label="Default select example" name="to" id="lang" form="form1" required>
+  <!-- <option value="hi">Hindi</option>  -->
+    <option value="en">English</option>
+    <option value="it">Italian</option>
+    <option value="fr">French</option>
+ <!-- <option value="ja">Japanese</option> -->
+    <option value="de">German</option>
+    <option value="sw">Swahili</option>
+  </select>
+
+
+
+
+
+<div class="inner-box-2">
+
+</div>
+
+       
+    </div>
+
+
+{% endblock %}
+
+
+\
+</div>
+<script>
+
+    var navlink =document.getElementById("body").style.color="red";
+</script>

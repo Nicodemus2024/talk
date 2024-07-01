@@ -1,0 +1,70 @@
+
+{% extends 'translate/base.html' %}
+
+
+
+{% block content %}
+
+    
+
+<form action="{% url 'translated' %}" method="post" id="form2">
+    {% csrf_token %}
+</form>
+<div class="input">
+    <textarea  form="form2" id="textbox3" class="col-12" name="work" placeholder="Speak to mic.... " rows="15" cols="50" readonly></textarea>
+</div>
+<div class="btn2 mt-2">
+    <button id="start" class="btn btn-primary">Start Recognition <i class="fa fa-microphone"></i></button>
+    <button id="pause" class="btn btn-primary" >Pause Recognition <i class="fa fa-pause"></i></button>
+    <button form="form2" type="submit" id="submit" class="btn btn-primary">Translate <i class="fa fa-language"></i></button>
+</div>
+
+<p id="recording-instructions">Press the <strong>Start Recognition <i class="fa fa-microphone"></i></strong> button and allow access.</p>
+
+
+
+
+
+           
+ {% endblock %}
+            
+<!-- end of block 1-->
+
+
+
+
+
+
+
+
+
+
+   <!-- block 2 -->
+{% block content2 %}
+               
+<select class="form-select mt- col-12" aria-label="Default select example" name="to" id="lang" form="form2" required >
+<!-- <option value="hi">Hindi</option>  -->
+<option value="en">English</option>
+<option value="it">Italian</option>
+<option value="fr">French</option>
+<!-- <option value="ja">Japanese</option> -->
+<option value="de">German</option>
+<option value="sw">Swahili</option>
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+<textarea id="textbox4" class="col-12" rows="14" cols="50" readonly>{{text}}</textarea>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="\static/js/speech_record.js"></script>
+
+{% endblock %}
